@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.UnitOfWork;
 
-public class AppDbContext : DbContext, IAuthDomain
+public class AppDbContext : DbContext, IAuthDomain, ICartDomain
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options) { }
