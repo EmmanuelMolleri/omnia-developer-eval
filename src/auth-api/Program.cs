@@ -3,6 +3,7 @@ using IoC;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
+    .AddInfraestructureServicesDependencies(builder.Configuration)
     .AddServiceDependencies()
     .AddControllers();
 

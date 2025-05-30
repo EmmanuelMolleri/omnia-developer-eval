@@ -6,5 +6,5 @@ public class BaseResult<T>
 {
     public HttpStatusCode Status { get; set; }
     public T Result { get; set; }
-    public IEnumerable<string> Messages { get; set; } = new List<string>();
+    public List<string> Messages { get; set; } = new List<string>();
 }

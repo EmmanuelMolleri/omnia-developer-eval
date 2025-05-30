@@ -1,10 +1,4 @@
 using IoC;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace auth_api
 {
     public class Startup
@@ -20,6 +14,7 @@ namespace auth_api
         {
             services
                 .AddServiceDependencies()
+                .AddInfraestructureServicesDependencies(Configuration)
                 .AddControllers();
 
             services.AddEndpointsApiExplorer();
