@@ -124,7 +124,6 @@ public class GetCategoryRatingsQueryHandlerTests
     }
 }
 
-// Fake implementation for IProductDomain
 public class FakeProductDomain : IProductDomain
 {
     public DbSet<Product> Products { get; set; }
@@ -132,5 +131,10 @@ public class FakeProductDomain : IProductDomain
     public FakeProductDomain(AppDbContext context)
     {
         Products = context.Products;
+    }
+
+    public int SaveChanges()
+    {
+        throw new NotImplementedException();
     }
 }
