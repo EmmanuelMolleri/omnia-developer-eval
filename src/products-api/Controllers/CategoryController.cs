@@ -20,11 +20,11 @@ public class CategoryController : ControllerBase
     {
         var result = await _mediator.Send(query);
 
-        if (!result.Result.Any())
+        if (!result.Data.Result.Any())
         {
             return NoContent();
         }
 
-        return Ok(result.Result);
+        return Ok(result.Data);
     }
 }

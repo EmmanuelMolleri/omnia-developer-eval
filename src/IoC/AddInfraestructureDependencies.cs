@@ -1,4 +1,3 @@
-using System;
 using Infraestructure.Repositories;
 using Infraestructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +13,9 @@ public static class AddInfraestructureDependencies
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(connectionString));
 
+        services.AddScoped<IProductDomain, AppDbContext>();
         services.AddScoped<IAuthDomain, AppDbContext>();
+        services.AddScoped<ICartDomain, AppDbContext>();
 
         return services;
     }

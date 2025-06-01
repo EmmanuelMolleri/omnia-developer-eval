@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Queries.Categories;
 
-public class GetCategoryRatingsQuery: IRequest<BaseResult<List<ProductDto>>>
+public class GetCategoryRatingsQuery: BasePagination, IRequest<BasePaginationResult<BaseResult<List<ProductDto>>>>
 {
     public string Category { get; set; }
 }

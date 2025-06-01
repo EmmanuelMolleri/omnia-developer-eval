@@ -7,5 +7,5 @@ public class CreateCartCommand : IRequest<BaseResult<CartDto>>
 {
     public int UserId { get; set; }
     public DateTime Date { get; set; }
-    public ProductDto Products { get; set; }
+    public List<ProductDto> Products { get; set; }
 }
